@@ -630,6 +630,26 @@ const VRKeyboard = function (scene, camera, renderer) {
         return null;
     }
 
+    this.getInputFrom=function(raycaster)
+    {
+        this.raycaster = raycaster;
+        var intersects = this.raycaster.intersectObject(this, true);
+
+        if (intersects.length > 0) {
+
+            var point = new THREE.Vector3().copy( intersects[ 0 ].point );
+            intersects[ 0 ].object.worldToLocal( point );
+            point.x+=this.width/2;
+            point.y=Math.abs(point.y-this.height/2);
+            for (var key in this.keys) {
+                if(this.keys.hasOwnProperty(key))
+                    if (this.keys[key].collides(point))
+                        return this.keys[key];
+            }
+        }
+        return null;
+    }
+
 
     this.drawKeys=function (rows) {
         for (var row in rows) {
