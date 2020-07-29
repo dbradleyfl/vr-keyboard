@@ -1,0 +1,28 @@
+{
+  "name": "vr-keyboard",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://github.com/erosmarcon/VRKeyboard/blob/master/images/screenshots/VRKeyboard-shot-1.png\"/> </p>",
+  "main": "js/VRKeyboard.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "dev": "parcel examples/Basic.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbradleyfl/vr-keyboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbradleyfl/vr-keyboard/issues"
+  },
+  "homepage": "https://github.com/dbradleyfl/vr-keyboard#readme",
+  "dependencies": {
+    "three": "^0.118.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

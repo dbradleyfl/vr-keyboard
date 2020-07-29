@@ -1,4 +1,6 @@
-VRKey=function(data, xPos, yPos)
+import * as THREE from 'three'
+
+const VRKey=function(data, xPos, yPos)
 {
     this.code=data.c;
     this.x=xPos;
@@ -82,7 +84,7 @@ const Unicode =
     TAB: '\u21E5'
 }
 
-VRKeyboard = function (scene, camera, renderer) {
+const VRKeyboard = function (scene, camera, renderer) {
 
     THREE.Group.apply(this);
 
@@ -123,7 +125,7 @@ VRKeyboard = function (scene, camera, renderer) {
         }
     });
 
-    this._labelColor='#99FF33';
+    this._labelColor='#ffffff';
     Object.defineProperty(VRKeyboard.prototype, 'labelColor', {
         enumerable: true,
         configurable: true,
@@ -135,7 +137,7 @@ VRKeyboard = function (scene, camera, renderer) {
         }
     });
 
-    this._labelDownColor='#99FF33';
+    this._labelDownColor='#ffffff';
     Object.defineProperty(VRKeyboard.prototype, 'labelDownColor', {
         enumerable: true,
         configurable: true,
@@ -159,7 +161,7 @@ VRKeyboard = function (scene, camera, renderer) {
         }
     });
 
-    this._borderDownColor='#99FF33';
+    this._borderDownColor='#ffffff';
     Object.defineProperty(VRKeyboard.prototype, 'borderDownColor', {
         enumerable: true,
         configurable: true,
@@ -272,6 +274,11 @@ VRKeyboard = function (scene, camera, renderer) {
                 {c: Unicode.SPACE, type: 'space'},
                 {c: '.', type: 'standard'},
                 {c: Unicode.ENTER, type: 'enter'}
+            ],
+            [
+                {c: 'ctrl', type: 'ctrl'},
+                {c: 'alt', type: 'alt'},
+                {c: 'esc', type: 'esc'},
             ]
         ];
 
@@ -300,6 +307,11 @@ VRKeyboard = function (scene, camera, renderer) {
             [
                 {c: Unicode.DELETE, type: 'delete'},
                 {c: Unicode.ENTER, type: 'enter'}
+            ],
+            [
+                {c: 'ctrl', type: 'ctrl'},
+                {c: 'alt', type: 'alt'},
+                {c: 'esc', type: 'esc'},
             ]
         ];
 
@@ -346,6 +358,11 @@ VRKeyboard = function (scene, camera, renderer) {
                 {c: Unicode.SPACE, type: 'space'},
                 {c: '.', type: 'standard'},
                 {c: Unicode.ENTER, type: 'enter'}
+            ],
+            [
+                {c: 'ctrl', type: 'ctrl'},
+                {c: 'alt', type: 'alt'},
+                {c: 'esc', type: 'esc'},
             ]
         ];
 
@@ -391,6 +408,11 @@ VRKeyboard = function (scene, camera, renderer) {
                 {c: Unicode.SPACE, type: 'space'},
                 {c: '.', type: 'standard'},
                 {c: Unicode.ENTER, type: 'enter'}
+            ],
+            [
+                {c: 'ctrl', type: 'ctrl'},
+                {c: 'alt', type: 'alt'},
+                {c: 'esc', type: 'esc'},
             ]
         ];
 
@@ -436,6 +458,11 @@ VRKeyboard = function (scene, camera, renderer) {
                 {c: Unicode.SPACE, type: 'space'},
                 {c: '.', type: 'standard'},
                 {c: Unicode.ENTER, type: 'enter'}
+            ],
+            [
+                {c: 'ctrl', type: 'ctrl'},
+                {c: 'alt', type: 'alt'},
+                {c: 'esc', type: 'esc'},
             ]
         ];
 
@@ -854,7 +881,7 @@ VRKeyboard.prototype = Object.assign(Object.create(THREE.Group.prototype), {
 });
 
 
-VRTextInput = function () {
+const VRTextInput = function () {
 
     THREE.Group.apply(this);
 
@@ -877,7 +904,7 @@ VRTextInput = function () {
         }
     });
 
-    this._textColor='#99FF33';
+    this._textColor='#ffffff';
     Object.defineProperty(VRTextInput.prototype, 'textColor', {
         enumerable: true,
         configurable: true,
@@ -901,7 +928,7 @@ VRTextInput = function () {
         }
     });
 
-    this._textFocusColor='#99FF33';
+    this._textFocusColor='#ffffff';
     Object.defineProperty(VRTextInput.prototype, 'textFocusColor', {
         enumerable: true,
         configurable: true,
@@ -1228,6 +1255,8 @@ CanvasRenderingContext2D.prototype.roundRect =function(x, y, w, h, r)
     this.fill();
 }
 
+
+export default VRKeyboard
 
 /*
  https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInPath
